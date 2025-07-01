@@ -1,7 +1,12 @@
 import '../models/word.dart';
 
 class WordRepository {
-  // Dummy data na start
+  static final WordRepository _instance = WordRepository._internal();
+
+  factory WordRepository() => _instance;
+
+  WordRepository._internal();
+
   final List<Word> _words = [
     Word(id: '1', pl: 'kot', en: 'cat', es: 'gato'),
     Word(id: '2', pl: 'pies', en: 'dog', es: 'perro'),

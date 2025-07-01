@@ -3,6 +3,7 @@ import '../models/word.dart';
 import '../models/language.dart';
 import '../widgets/flag_icon.dart';
 import '../widgets/revealable_text.dart';
+import 'word_form_screen.dart';
 
 class WordDetailModal extends StatelessWidget {
   final Word word;
@@ -93,7 +94,19 @@ class WordDetailModal extends StatelessWidget {
               right: 0,
               child: FloatingActionButton(
                 mini: true,
-                onPressed: onEdit ?? () {},
+                onPressed: () async {
+                  Navigator.of(context).pop();
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WordFormScreen(
+                        baseLanguage: baseLanguage,
+                        wordToEdit: word,
+                      ),
+                    ),
+                  );
+                  if (onEdit != null) onEdit!();
+                },
                 tooltip: 'Edit',
                 child: const Icon(Icons.edit),
               ),
