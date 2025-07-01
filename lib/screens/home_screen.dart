@@ -37,8 +37,9 @@ class HomeScreen extends StatelessWidget {
                     mainText = word.es;
                     break;
                 }
-                if (mainText == null || mainText.isEmpty)
+                if (mainText == null || mainText.isEmpty) {
                   return const SizedBox.shrink();
+                }
 
                 return WordTile(word: word, baseLanguage: baseLanguage);
               },
@@ -48,8 +49,8 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           // Tu później formularz dodawania słówka
         },
-        child: const Icon(Icons.add),
         tooltip: "Dodaj słówko",
+        child: const Icon(Icons.add),
       ),
     );
   }

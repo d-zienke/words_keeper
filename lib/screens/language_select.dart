@@ -14,12 +14,8 @@ class _LanguageSelectScreenState extends State<LanguageSelectScreen> {
   // Lista obsługiwanych języków — można rozszerzać!
   final List<Language> languages = const [
     Language(code: 'pl', name: 'Polski', asset: 'assets/flags/pl.png'),
-    Language(code: 'gb', name: 'English (UK)', asset: 'assets/flags/gb.png'),
-    Language(
-      code: 'es',
-      name: 'Español (España)',
-      asset: 'assets/flags/es.png',
-    ),
+    Language(code: 'gb', name: 'English', asset: 'assets/flags/gb.png'),
+    Language(code: 'es', name: 'Español', asset: 'assets/flags/es.png'),
   ];
 
   int selectedIndex = 0;
