@@ -1,8 +1,14 @@
 import '../models/word.dart';
 
 class WordRepository {
-  // Na start prosta lista w pamięci (baza do rozbudowy)
-  final List<Word> _words = [];
+  // Dummy data na start
+  final List<Word> _words = [
+    Word(id: '1', pl: 'kot', en: 'cat', es: 'gato'),
+    Word(id: '2', pl: 'pies', en: 'dog', es: 'perro'),
+    Word(id: '3', pl: 'dom', en: 'house', es: 'casa'),
+    Word(id: '4', pl: 'woda', en: 'water', es: 'agua'),
+    Word(id: '5', pl: 'dzień', en: 'day', es: 'día'),
+  ];
 
   List<Word> getAll() => List.unmodifiable(_words);
 
