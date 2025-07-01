@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/word.dart';
 import '../models/language.dart';
+import '../screens/word_detail_modal.dart';
 
 class WordTile extends StatelessWidget {
   final Word word;
@@ -39,7 +40,15 @@ class WordTile extends StatelessWidget {
       ),
       subtitle: Text(subtitle),
       onTap: () {
-        // Tu potem otworzymy szczegóły słówka
+        showDialog(
+          context: context,
+          barrierDismissible: true,
+          builder: (context) => WordDetailModal(
+            word: word,
+            baseLanguage: baseLanguage,
+            // Tu potem dodamy funkcję do edycji!
+          ),
+        );
       },
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       shape: RoundedRectangleBorder(
